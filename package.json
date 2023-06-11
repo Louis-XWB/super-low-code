@@ -22,7 +22,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": " eslint 'src/**/*.+(js|ts|jsx|tsx)' ",
-    "format": " prettier --write 'src/**/*.+(js|ts|jsx|tsx)' "
+    "format": " prettier --write 'src/**/*.+(js|ts|jsx|tsx)' ",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -47,8 +48,9 @@
     "@typescript-eslint/parser": "^5.59.9",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
     "eslint-config-react": "^1.1.7",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
     "prettier": "^2.8.8"
   }
 }
