@@ -2,6 +2,10 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
+    "cSpell.words": [
+        "ahooks",
+        "Immer"
+    ],
     // "cSpell.words": [
     //     "ahooks",
     //     "antd",
