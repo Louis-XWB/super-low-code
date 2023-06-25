@@ -4,8 +4,6 @@ import { useTitle } from 'ahooks'
 const Register: FC = () => {
   useTitle('SuperLowCode - 注册')
 
-  // useTitle('SuperLowCode - 注册')
-
   return (
     <div>
       <h1>Register</h1>
