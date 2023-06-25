@@ -3,6 +3,9 @@ import QuestionCard from '../../components/QuestionCard'
 import styles from './Common.module.scss'
 import { useSearchParams } from 'react-router-dom'
 import { useTitle } from 'ahooks'
+import { Typography, Empty } from 'antd'
+
+const { Title } = Typography
 
 const defaultQuestionData = [
   {
@@ -51,18 +54,19 @@ const List: FC = () => {
     <>
       <div className={styles.header}>
         <div className={styles.left}>
-          <h3>我的问卷 {keyword}</h3>
+          <Title level={3}>我的问卷</Title>
         </div>
         <div className={styles.right}>（搜索）</div>
       </div>
       <div className={styles.content}>
+        {questionList.length === 0 && <Empty description="暂无数据" />}
         {questionList.length > 0 &&
           questionList.map(question => {
             const { _id } = question
             return <QuestionCard key={_id} {...question} />
           })}
       </div>
-      <div className={styles.footer}>Footer</div>
+      <div className={styles.footer}>load more</div>
     </>
   )
 }
