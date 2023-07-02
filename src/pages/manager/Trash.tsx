@@ -4,6 +4,7 @@ import styles from './Common.module.scss'
 import { Typography, Empty, Table, Tag, Space, Button, Modal } from 'antd'
 import QuestionCard from '../../components/QuestionCard'
 import { StarOutlined } from '@ant-design/icons'
+import ListSearch from '../../components/ListSearch'
 
 const { Title } = Typography
 const { confirm } = Modal
@@ -132,7 +133,9 @@ const Trash: FC = () => {
         <div className={styles.left}>
           <Title level={3}>回收站</Title>
         </div>
-        <div className={styles.right}>（搜索）</div>
+        <div className={styles.right}>
+          <ListSearch />
+        </div>
       </div>
 
       <div className={styles.content}>
