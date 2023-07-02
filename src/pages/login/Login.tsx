@@ -38,7 +38,7 @@ const Login: FC = () => {
   function onFinish(values: any) {
     console.log('Success:', values)
     const { username, password, remember } = values
-    if (remember) {
+    if (remember && username && password) {
       rememberUser(username, password)
     } else {
       forgetUser()
