@@ -6,6 +6,7 @@
         "ahooks",
         "antd",
         "Immer",
+        "mockjs",
         "Novar",
         "Popconfirm"
     ],
