@@ -1,10 +1,11 @@
 import React, { FC, useState } from 'react'
 import { useTitle } from 'ahooks'
 import styles from './Common.module.scss'
-import { Typography, Empty, Table, Tag, Space, Button, Modal } from 'antd'
+import { Typography, Empty, Table, Tag, Space, Button, Modal, Spin } from 'antd'
 import QuestionCard from '../../components/QuestionCard'
 import { StarOutlined } from '@ant-design/icons'
 import ListSearch from '../../components/ListSearch'
+import useLoadQuestionListData from '../../hooks/useLoadQuestionListData'
 
 const { Title } = Typography
 const { confirm } = Modal
@@ -47,7 +48,8 @@ const defaultQuestionData = [
 const Trash: FC = () => {
   useTitle('SuperLowCode - 回收站')
 
-  const [questionList, setQuestionList] = useState(defaultQuestionData)
+  const { data = {}, loading } = useLoadQuestionListData({ isDeleted: true })
+  const { list = [], total } = data
 
   const [selectedRowKeys, setSelectedRowKeys] = useState<string[]>([])
 
@@ -114,7 +116,7 @@ const Trash: FC = () => {
         </Button>
       </Space>
       <Table
-        dataSource={questionList}
+        dataSource={list}
         columns={tableColumns}
         rowKey={q => q._id}
         rowSelection={{
@@ -137,10 +139,14 @@ const Trash: FC = () => {
           <ListSearch />
         </div>
       </div>
-
       <div className={styles.content}>
-        {questionList.length === 0 && <Empty description="暂无数据" />}
-        {questionList.length > 0 && TableElement}
+        {loading && (
+          <div style={{ textAlign: 'center' }}>
+            <Spin />
+          </div>
+        )}
+        {!loading && list.length === 0 && <Empty description="暂无数据" />}
+        {!loading && list.length > 0 && TableElement}
       </div>
 
       <div className={styles.footer}>分页</div>

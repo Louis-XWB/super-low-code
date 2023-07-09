@@ -4,7 +4,8 @@ import { useTitle } from 'ahooks'
 import { Button, Typography } from 'antd'
 import { MANAGER_LIST_PATHNAME } from '../router'
 import styles from './Home.module.scss'
-import '../_mock/index.ts'
+// import '../_mock/index.ts'
+import axios from 'axios'
 // import axios from 'axios'
 
 const { Title, Paragraph } = Typography
@@ -17,6 +18,12 @@ const Home: FC = () => {
   //     console.log('res data', res.data)
   //   })
   // }, [])
+
+  useEffect(() => {
+    axios.get('/api/test').then(res => {
+      console.log('res data', res.data)
+    })
+  }, [])
 
   const nav = useNavigate()
 
