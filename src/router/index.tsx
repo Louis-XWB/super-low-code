@@ -13,6 +13,11 @@ import Edit from '../pages/question/Edit'
 import Stat from '../pages/question/Stat'
 import Star from '../pages/manager/Star'
 import Trash from '../pages/manager/Trash'
+import RoadMap from '../pages/quiz/RoadMap'
+import Concept from '../pages/quiz/Concept'
+import Quiz from '../pages/quiz/Quiz'
+import Concept2 from '../pages/quiz/Concept2'
+import Quiz2 from '../pages/quiz/Quiz2'
 
 const routes = createBrowserRouter([
   {
@@ -48,6 +53,26 @@ const routes = createBrowserRouter([
             element: <Trash />,
           },
         ],
+      },
+      {
+        path: 'roadmap',
+        element: <RoadMap />,
+      },
+      {
+        path: 'concept',
+        element: <Concept />,
+      },
+      {
+        path: 'quiz',
+        element: <Quiz />,
+      },
+      {
+        path: 'concept2',
+        element: <Concept2 />,
+      },
+      {
+        path: 'quiz2',
+        element: <Quiz2 />,
       },
       {
         path: '*',

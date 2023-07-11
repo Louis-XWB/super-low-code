@@ -14,7 +14,7 @@ const Logo: FC = () => {
           <Title>
             <FormOutlined />
           </Title>
-          <Title>SuperLowCode</Title>
+          <Title>Hack Quest</Title>
         </Space>
       </Link>
     </div>

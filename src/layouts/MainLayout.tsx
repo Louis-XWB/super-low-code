@@ -14,16 +14,14 @@ const MainLayout: FC = () => {
         <div className={styles.left}>
           <Logo />
         </div>
-        <div className={styles.right}>
-          <UserInfo />
-        </div>
+        <div className={styles.right}>{/* <UserInfo /> */}</div>
       </Header>
 
       <Content className={styles.main}>
         <Outlet />
       </Content>
 
-      <Footer className={styles.footer}>SuperLowCode &copy;2023 - present. created by Novar</Footer>
+      <Footer className={styles.footer}>Hack Quest &copy;2023 - present. created by Novar</Footer>
     </Layout>
   )
 }

@@ -1,0 +1,23 @@
+.container{
+  height: calc(100vh - 64px - 65px);;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .card{
+    padding-left: 25px;
+    padding-right: 25px;
+    width: auto;
+    cursor: pointer;
+
+    .status{
+      padding-top: 0px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      size: 30px;
+    }
+  }
+}
